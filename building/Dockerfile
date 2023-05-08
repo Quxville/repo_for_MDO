@@ -1,4 +1,8 @@
-FROM node:latest
-RUN git clone https://github.com/watson-developer-cloud/tone-analyzer-nodejs.git
-WORKDIR tone-analyzer-nodejs
-RUN npm install
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update
+RUN apt-get -y install git gcc make automake meson libglib2.0-dev libssl-dev libghc-terminfo-dev
+
+WORKDIR app

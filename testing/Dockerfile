@@ -1,2 +1,6 @@
-FROM tone_project
-RUN npm test
+FROM irssibld
+# FROM ubuntu
+
+# WORKDIR build
+
+# RUN meson test
