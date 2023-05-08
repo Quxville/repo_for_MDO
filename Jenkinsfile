@@ -8,7 +8,6 @@ pipeline {
         stage('Clone') {
             steps {
                 sh 'DOCKER_TLS_VERIFY=0 docker rm -f buffer'
-                sh 'docker volume prune -f'
                 sh 'docker volume create volin'
                 sh 'docker run -v volin:/data --name buffer ubuntu'
                 sh 'cd ~/ && find irssi || git clone https://github.com/Quxville/repo_for_DO'
